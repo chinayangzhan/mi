@@ -1,0 +1,257 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size:0.6rem;
+	font-family: Arial,Verdana,Sans-serif;
+	word-wrap: break-word;
+
+}
+
+img{
+	display: block;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+li{
+	list-style: none;
+}
+body{
+	color: #333;
+		background: #F5F5F5;
+}
+/*header閮ㄥ垎*/
+header{
+	width: 100%;
+	background:#f2f2f2;
+	/*padding: 0 ;	*/
+	
+}
+.left img{
+	width: 0.97735rem;
+	height: 0.97735rem;
+}
+.left a{
+	position: absolute;
+	top: 0.47735rem;
+	left: 0.4444rem;
+	z-index: 3;
+}
+header h2{
+	width: 100%;
+	height: 1.8664rem;
+	line-height: 1.8664rem;
+	text-align: center;
+	position: relative;
+	font-weight: 400;
+	
+}
+.fangdajing a{
+	width: 0.97735rem;
+	height: 0.97735rem;
+	position: absolute;
+	top: 0.47735rem;
+	right: 0.4444rem;
+}
+
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome銆乫irefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome銆乫irefox銆乷pera銆丼afari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{font-family:"iconfont";
+font-size:0.8rem;font-style:normal;}
+
+/*涓讳綋閮ㄥ垎*/
+.main{
+	width: 100%;
+}
+.info{
+	width: 100%;
+	height: 3.11095rem;
+	padding-top: 0.38885rem;
+	background: #FF6B00;
+}
+.info p{
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 0.7rem;
+}
+.jiahao {
+	height: 4.6452rem;
+	width: 100%;
+	letter-spacing: 0.065rem;
+	font-weight:600 ;
+}
+#jia{
+	margin: 0 auto;
+	margin-top: 0.5rem;
+	width: 3.15rem;
+	height: 3.15rem;
+	line-height: 3.15rem;
+	border-radius:5rem ;
+	text-align: center;
+	font-size:2rem ;
+	background:#FFD24D;
+	z-index: 2;
+	position: relative;
+}
+.newnav{
+	width: 100%;
+	height: 3rem;
+
+	display: -webkit-box; 
+    display: -moz-box; 
+    display: -ms-flexbox; 
+    display: -webkit-flex; 
+    display: flex;
+	background: white;
+	margin-bottom: 0.5rem;
+	padding-top: 1.75rem;
+	padding-bottom: 0.5rem;
+}
+.newnav a{
+	display: block;
+	width: 5rem;
+	height: 3rem;
+	border-right:1px solid #F5F5F5;
+	flex: 1;
+}
+.newnav .img{
+	width: 1.3328rem;
+	height: 1.3328rem;
+	background-image: url(../img/spr2.png);
+	background-position: 0 0;
+	background-size: cover;
+	margin: 0 auto;
+}
+.newnav a:nth-child(2) .img{
+	width: 1.3328rem;
+	height: 1.3328rem;
+	background-image: url(../img/spr2.png);
+	background-position: 0 -2.6656rem;
+	background-size: cover;
+	margin: 0 auto;
+}
+.newnav a:nth-child(3) .img{
+	width: 1.3328rem;
+	height: 1.3328rem;
+	background-image: url(../img/spr2.png);
+	background-position: 0 -1.3328rem;
+	background-size: cover;
+	margin: 0 auto;
+}
+.newnav a:nth-child(3){
+	border: none;
+}
+.newnav a p{
+	width: 100%;
+	margin-top: 0.35555rem;
+	text-align: center;
+	font-size:0.6rem ;
+}
+
+.list{
+	width: 100%;
+
+}
+.item{
+	height: 1.77735rem;
+	line-height: 1.77735rem;
+	margin-bottom: 0.35rem;
+	background: white;
+}
+.item .itemimg{
+	display: inline-block;
+	width: 0.8883rem;
+	height: 0.8883rem;
+	margin-left: 0.66665rem;
+	margin-right: 0.4444rem;
+	background-image: url(../img/spr2.png);
+	background-position-y:-4.88884rem ;
+	background-size:1.3333rem 7.55548rem;
+	vertical-align: top;
+	margin-top:0.3894rem ;
+	
+}
+.item:nth-child(2) .itemimg{
+	background-position-y:-5.77772rem ;
+}
+.item:nth-child(3) .itemimg{
+	background-position-y:-3.99996rem ;
+}
+.item:nth-child(4) .itemimg{
+	background-position-y:-6.6666rem ;
+}
+.item .text{
+	display: inline-block;
+	height: 0.8883rem ;
+	line-height:0.8883rem;
+	font-size:0.7rem ;
+}
+
+
+/*footer閮ㄥ垎*/
+/*footer闂侇喓鍔岄崹锟�*/
+.main{
+	margin-bottom: 2.34745rem;
+}
+footer{
+	width:100%;
+	height: 1.8rem;
+	position: fixed;
+	bottom: 0;
+	border-top:1px solid #e0e0e0;
+	background: white;
+	z-index:3;
+	padding-top: 0.25rem;
+}
+footer ul li{
+	float: left;
+}
+.nav{
+	width: 25%;
+	height: 1.51565rem;
+	color: #E5E5E5;
+	
+	
+}
+.nav a{
+	color: #999;
+}
+.nav:nth-child(4) a{
+	width: 100%;
+	color: #FF5722;
+}
+.footer-i{
+	width: 100%;
+	height: 0.8883rem;
+	margin-bottom: 0.1rem;
+	
+}
+.footer-i .iconfont{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+.nav p{
+	width: 100%;
+	text-align: center;
+}
+
+
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome閵嗕公irefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome閵嗕公irefox閵嗕狗pera閵嗕讣afari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{font-family:"iconfont";
+font-size:0.8rem;font-style:normal;}
