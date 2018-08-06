@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx8afd33b44c108456",
-	"projectname": "weiapp",
+	"projectname": "wechat-app",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
