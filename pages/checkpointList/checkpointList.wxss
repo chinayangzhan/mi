@@ -1,0 +1,72 @@
+#mainInfoContainer {
+  width: 630rpx;
+  background-color: #f2f2f2;
+  padding: 30rpx 25rpx 28rpx 25rpx;
+  margin: 10rpx auto 0 auto;
+  border-radius: 10rpx;
+}
+
+#nameInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#nameLabel {
+  width: 66%;
+  font-size: 30rpx;
+  line-height: 35rpx;
+  color: #3e3e3e;
+}
+
+.total-count-label {
+  width: 30%;
+  font-size: 24rpx;
+  line-height: 35rpx;
+  text-align: right;
+  color: #999;
+}
+
+#countDetailContainer {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 30rpx;
+}
+
+#countDetailContainer > text {
+  margin-right: 60rpx;
+}
+
+#entityList, #checkpointList {
+  margin-top: 30rpx;
+}
+
+.checkpoint-category-name {
+  display: block;
+  width: 680rpx;
+  color: #333;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  margin: auto;
+  padding-bottom: 30rpx;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 610rpx;
+  padding: 24rpx 35rpx;
+  border: 1rpx solid #2fa0d4;
+  border-radius: 15rpx;
+  margin: 0 auto 30rpx auto;
+}
+
+.option-item-name {
+  font-size: 30rpx;
+  color: #3e3e3e;
+}
+
+.option-item-status {
+  font-size: 24rpx;
+}

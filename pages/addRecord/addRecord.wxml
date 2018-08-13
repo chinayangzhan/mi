@@ -3,7 +3,7 @@
     <button id="scanBtn" bindtap="openScan">扫一扫</button>
     <button id="changeToCheckpointBtn" bindtap="changeToCheckpoint" wx:if="{{pageType == 'entity'}}">檢查項</button>
     <button id="changeToEntityBtn" bindtap="changeToEntity" wx:if="{{pageType == 'checkpoint'}}">資源目錄</button>
-    <button id="parentItem{{itemIndex}}" wx:for="{{listData}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="{{itemIndex}}" class="parent-data-item {{selectedParentId==item.id?'parent-data-item-selected':''}}" bindtap="chooseParentData" data-item-index="{{itemIndex}}">
+    <button id="parentItem{{itemIndex}}" wx:for="{{listData}}" wx:for-item="item" wx:for-index="itemIndex" class="parent-data-item {{selectedParentId==item.id?'parent-data-item-selected':''}}" bindtap="chooseParentData" data-item-index="{{itemIndex}}">
       <image class="parent-item-unfinished-icon" wx:if="{{!item.isAllChecked}}" src="{{selectedParentId==item.id ? '../../img/item_unfinished_light.png' : '../../img/item_unfinished_dark.png'}}"></image>
       <text wx:if="{{pageType=='checkpoint'}}" class="parent-item-index">檢查項{{item.romaIndex}}</text>
       <text wx:if="{{pageType=='entity'}}" class="parent-item-index">資源{{item.romaIndex}}</text>
@@ -12,7 +12,7 @@
     <button id="examineFinishBtn" bindtap="finishCheck">巡檢結束</button>
   </scroll-view>
   <scroll-view id="subItemsList" scroll-y scroll-with-animation scroll-into-view="{{subToView}}" bindscroll="subListScroll">
-    <view id="subItem{{itemIndex}}" wx:for="{{subListData}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="{{itemIndex}}" class="sub-data-item-box {{selectedSubId==item.id?'sub-data-item-selected':''}}" bindtap="chooseSubData" data-item-index="{{itemIndex}}" data-parent-index="{{item.parentItemIndex}}">
+    <view id="subItem{{itemIndex}}" wx:for="{{subListData}}" wx:for-item="item" wx:for-index="itemIndex" class="sub-data-item-box {{selectedSubId==item.id?'sub-data-item-selected':''}}" bindtap="chooseSubData" data-item-index="{{itemIndex}}" data-parent-index="{{item.parentItemIndex}}">
       <view class="sub-data-item">
         <view class="sub-item-name-box">
           <text class="sub-item-name">#{{itemIndex+1}} {{item.name}}</text>

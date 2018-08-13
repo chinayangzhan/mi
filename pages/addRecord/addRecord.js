@@ -90,7 +90,8 @@ Page({
       this.setData({
           listData: checklistData.data,
           subListData: subListData,
-          selectedParentId: checklistData.data[0].id
+          selectedParentId: checklistData.data[0].id,
+          selectedSubId: null
         },
         () => {
           calTopArray = [];
@@ -146,7 +147,8 @@ Page({
       this.setData({
           listData: entityData.data,
           subListData: subListData,
-          selectedParentId: entityData.data[0].id
+          selectedParentId: entityData.data[0].id,
+          selectedSubId: null
         },
         () => {
           calTopArray = [];
@@ -269,20 +271,20 @@ Page({
   },
 
   goResourceList() {
-    wx.showToast({
-      title: '资源目录'
+    wx.navigateTo({
+      url: '../checkpointList/checkpointList?type=resource'
     });
   },
 
   goCheckpointList() {
-    wx.showToast({
-      title: '检查点'
+    wx.navigateTo({
+      url: '../checkpointList/checkpointList?type=checkpoint'
     });
   },
 
   goRecords() {
-    wx.showToast({
-      title: '查看记录'
+    wx.navigateTo({
+      url: '../recordList/recordList?type=' + this.data.pageType
     });
   },
 
@@ -293,8 +295,8 @@ Page({
   },
 
   finishCheck() {
-    wx.showToast({
-      title: '巡检结束'
+    wx.navigateTo({
+      url: '../checkResult/checkResult'
     });
   },
 
