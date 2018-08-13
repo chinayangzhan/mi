@@ -1,57 +1,128 @@
 //index.js
-//获取应用实例
-const app = getApp()
+import {
+  taskListData
+} from './taskListMockData';
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    curTabIndex: 0,
+    aboveList: [],
+    belowList: []
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onLoad(options) {
+    wx.setNavigationBarTitle({
+      title: 'OSM 巡檢任務'
+    });
   },
-  onLoad: function () {
-    wx.showTabBarRedDot({
-      index: 1,
-    })
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
+
+  onShow() {
+    this.getTaskList();
+  },
+
+  getTaskList() {
+    wx.showLoading({
+      title: '加載中...',
+      mask: true
+    });
+
+    setTimeout(() => {
+      let checkingList = [],
+          needCheckList = [],
+          recheckingList = [],
+          rectifyingList = [],
+          doneTaskList = [];
+          
+      for (let i = 0; i < taskListData.data.length; i++) {
+          const taskItem = taskListData.data[i];
+            
+          switch (taskItem.state) {
+                case 'checking':
+                  checkingList.push(taskItem);
+                  break;
+                case 'needcheck':
+                  needCheckList.push(taskItem);
+                  break;
+                case 'rechecking':
+                  recheckingList.push(taskItem);
+                  break;
+                case 'rectifying':
+                  rectifyingList.push(taskItem);
+                  break;
+                case 'done':
+                  doneTaskList.push(taskItem);
+                  break;
+            }
+          }
+
           this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+            checkingList: checkingList,
+            needCheckList: needCheckList,
+            recheckingList: recheckingList,
+            rectifyingList: rectifyingList,
+            doneTaskList: doneTaskList
+          });
+
+          if(this.data.curTabIndex === 0) {
+            this.setData({
+              aboveList: checkingList,
+              belowList: needCheckList
+            });
+          } else if (this.data.curTabIndex === 1) {
+            this.setData({
+              aboveList: recheckingList,
+              belowList: rectifyingList
+            });
+          } else if (this.data.curTabIndex === 2) {
+            this.setData({
+              aboveList: doneTaskList,
+              belowList: []
+            });
+          }
+
+          wx.hideLoading();
+    }, 500)
+  },
+
+  tabSwitch(e) {
+    let tabIndex = e.target.dataset.index;
+    
+    switch (tabIndex) {
+      case '0':
+        this.setData({
+          aboveList: this.data.checkingList,
+          belowList: this.data.needCheckList,
+          curTabIndex: tabIndex
+        });
+        break;
+      case '1':
+        this.setData({
+          aboveList: this.data.recheckingList,
+          belowList: this.data.rectifyingList,
+          curTabIndex: tabIndex
+        });
+        break;
+      case '2':
+        this.setData({
+          aboveList: this.data.doneTaskList,
+          belowList: [],
+          curTabIndex: tabIndex
+        });
+        break;
     }
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+
+  goTask(e) {
+    let taskState = e.currentTarget.dataset.state;
+
+    switch (taskState) {
+      case 'checking':
+        wx.navigateTo({
+          url: '../addRecord/addRecord'
+        })
+      case 'needcheck':
+        wx.navigateTo({
+          url: '../addRecord/addRecord'
+        })
+    }
   }
 })

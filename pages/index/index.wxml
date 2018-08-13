@@ -1,13 +1,49 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="tab">
+    <view class="tab-item tab-item0 {{curTabIndex == 0 ? 'tab-selected' : ''}}" bindtap="tabSwitch" data-index='0'>巡查任務</view>
+    <view class="tab-item tab-item1 {{curTabIndex == 1 ? 'tab-selected' : ''}}" bindtap="tabSwitch" data-index='1'>複審任務</view>
+    <view class="tab-item tab-item2 {{curTabIndex == 2 ? 'tab-selected' : ''}}" bindtap="tabSwitch" data-index='2'>已完成任務</view>
 </view>
+<scroll-view>
+    <view class='task-item' wx:for="{{aboveList}}" wx:key="{{itme.id}}" bindtap="goTask" data-state="{{item.state}}">
+        <view class='task-item-desc'>
+            <view class='task-item-name'>
+                <text>{{item.name}}</text>  
+            </view>
+            <view class='task-item-type'>
+                <text>任務類別：</text>
+                <text>{{item.type}}</text>
+            </view>
+        </view>
+        <view class='item-state-done' wx:if="{{item.state === 'done'}}">
+            <text>完成時間：{{item.doneTime}}</text>
+        </view>
+        <view class='task-item-state' wx:elif="{{item.state !== 'done' && item.state !== 'needcheck'}}">
+            <text class='item-state-checking' wx:if="{{item.state === 'checking'}}">執行中</text>
+            <text class='item-state-rechecking' wx:if="{{item.state === 'rechecking'}}">複審中</text>
+        </view>
+    </view>
+    <view class='cutting-line' wx:if="{{belowList.length !== 0}}"></view>
+    <view class='task-item' wx:for="{{belowList}}" wx:key="{{itme.id}}" bindtap="goTask" data-state="{{item.state}}">
+        <view class='task-item-desc'>
+            <view class='task-item-name'>
+                <text>{{item.name}}</text>  
+            </view>
+            <view class='task-item-type'>
+                <text>任務類別：</text>
+                <text>{{item.type}}</text>
+            </view>
+        </view>
+        <view class='task-item-state' wx:if="{{item.state === 'needcheck'}}">
+            <view>
+                <text class='item-state-needcheck-dueDay'>{{item.dueDay}}</text>
+            </view>
+            <view>
+                <text class='item-state-needcheck-text'>截止時間</text>
+            </view>   
+        </view>
+        <view class='task-item-state' wx:if="{{item.state === 'rectifying'}}">
+            <text class='item-state-rectifying'>整改中</text>
+        </view>
+    </view>
+</scroll-view>

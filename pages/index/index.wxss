@@ -1,21 +1,96 @@
 /**index.wxss**/
-.userinfo {
+.tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background-color:white;
+}
+
+.tab-item {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 30%;
+  color: #2fa0d4;
+  border-bottom: 0rpx;
+  border: 2rpx solid #2fa0d4;
+}
+
+.tab-item0 {
+  border-right: 0rpx; 
+}
+
+.tab-item2 {
+  border-left: 0rpx; 
+}
+
+.tab-selected {
+  color: white;
+  background-color: #2fa0d4;
+}
+
+/* task list */
+
+.task-item {
+  width: 660rpx;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2fa0d4;
+  border-radius: 15rpx;
+  margin: 0 auto;
+  margin-top: 15rpx;
+  padding: 15rpx;
+}
+
+.task-item-name {
+  color: white;
+  font-size: 30rpx;
+}
+
+.task-item-type {
+  color: #e4e3e2;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.task-item-state {
+  font-size: 30rpx;
+  width: 170rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color:white;
+  border-radius: 15rpx; 
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.item-state-done {
+  color: #e4e3e2;
+  font-size: 25rpx
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.item-state-checking, .item-state-rechecking {
+  color: green;
 }
 
-.usermotto {
-  margin-top: 200px;
+.item-state-rectifying {
+  color: orange;
+}
+
+.item-state-needcheck-dueDay {
+  font-size: 32rpx;
+}
+
+.item-state-needcheck-text {
+  color: gray;
+  font-size: 25rpx;
+}
+
+.cutting-line {
+  width: 85%;
+  height: 10rpx;
+  margin: 0 auto;
+  margin-top: 15rpx;
+  background-color: #2fa0d4;
+  border-radius: 10rpx; 
 }
