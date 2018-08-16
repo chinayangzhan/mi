@@ -1,0 +1,55 @@
+<!--pages/createRecord/createRecord.wxml-->
+<scroll-view>
+    <view class='section-box top-box'>
+      <view class='name-box'>
+        <view class='record-checkpoint-name'>{{checkPointName}}</view>
+        <view class='record-entity-name'>{{entityName}}</view>
+      </view>
+      <view class='top-button-box'>
+        <view class='scan' bindtap='openScan'>
+          <image class='top-button-icon' src='../../img/scan.png'></image>
+          <text>掃碼</text> 
+         </view>
+        <view class='choice' bindtap='choiceEntity'>
+          <image class='top-button-icon' src='../../img/folder.png'></image>
+          <text>選擇</text>
+        </view>
+      </view> 
+    </view>
+    <view class='section-box select-photo-box'>
+      <view class='camaro-box' bindtap='choiceImage' >
+        <image class='camera-icon' src='../../img/camaro.png' mode='scaleToFill'></image>
+      </view>
+      <view class='photo-item' wx:for='{{images}}' wx:key='{{index}}'>
+        <image src='{{item}}'data-url='{{item}}' mode='scaleToFill' bindtap='previewImage'></image>
+        <icon class='clear-icon' bindtap='removeImage' data-index='{{index}}' type='clear' size='12' color='red'></icon>
+      </view>
+    </view>
+    <view class='section-box desc-list'>
+      <view class="desc-item {{item.checked?'desc-item-checked':''}}" bindtap='checkboxChange' data-index='{{index}}' wx:for="{{desc}}" wx:key="{{index}}">
+        <checkbox style="transform:scale(.7)" checked="{{item.checked}}"/>
+        <text>{{item.text}}</text>
+      </view>
+      <view class='desc-item desc-item-add' bindtap='toggleAddDescInput' wx:if='{{showAddDescInput === false}}'>
+        <text>添加自定義描述</text>
+      </view>
+      <view class='custom-desc-box' wx:if='{{showAddDescInput === true}}'>
+          <input bindinput="bindKeyInput" class='custom-desc-input' placeholder="請添加自定義描述"></input>
+          <view class='image-button-box' hover-class='btn-hover-class' bindtap='addDesc'>
+           <image class='image-button' src='../../img/add.png'></image>
+          </view>
+          <view class='image-button-box' hover-class='btn-hover-class' bindtap='toggleAddDescInput'>
+            <image class='image-button' src='../../img/remove.png'></image>
+          </view>
+      </view>
+    </view>
+    <view class='submit-button-box'>
+      <view class='record-btn1' bindtap='showAction' hover-class='btn-hover-class'>放棄記錄</view>
+      <view class='record-btn1' hover-class='btn-hover-class'>不通過</view>
+      <view class='record-btn2' hover-class='btn-hover-class'>通過</view>
+    </view>
+    <view class='check-standard' hover-class='btn-hover-class'>
+      <icon type='info' color='#00BFFF' size='18'></icon>
+      <text>檢查標準</text>
+    </view>
+</scroll-view>

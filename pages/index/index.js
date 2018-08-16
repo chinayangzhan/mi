@@ -118,11 +118,13 @@ Page({
       case 'checking':
         wx.navigateTo({
           url: '../addRecord/addRecord'
-        })
+        });
+        break;
       case 'needcheck':
         wx.navigateTo({
           url: '../addRecord/addRecord'
-        })
+        });
+        break;
     }
   }
 })
