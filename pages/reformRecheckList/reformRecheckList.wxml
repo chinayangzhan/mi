@@ -1,0 +1,74 @@
+<view id="pageHeader">
+  <view id="switchTypeContainer">
+    <view bindtap="selectType" data-selection-type="record" class="switch-type-btn {{selection == 'record' ? 'switch-type-btn-selected' : ''}}">按記錄</view>
+    <view bindtap="selectType" data-selection-type="entity" class="switch-type-btn {{selection == 'entity' ? 'switch-type-btn-selected' : ''}}">按資源實體</view>
+  </view>
+
+  <view id="reformRecheckCountContainer">
+    <view id="reformTotalCountBox" wx:if="{{pageType == 'reform'}}">
+      <text class="check-position-label">{{name}}</text>
+      <view hidden="{{selection == 'entity'}}" class="count-filled-label">
+        <text decode>&nbsp;</text>
+      </view>
+      <view class="total-count-label">
+        <text>待整改：{{waitCount}}</text>
+        <text>已整改：{{alreadyCount}}</text>
+      </view>
+      <view hidden="{{selection != 'entity'}}" class="entity-count-label">需整改實體：{{waitEntityCount}}</view>
+    </view>
+    <view id="recheckTotalCountBox" wx:elif="{{pageType == 'recheck'}}">
+      <text class="check-position-label">{{name}}</text>
+      <view hidden="{{selection == 'entity'}}" class="count-filled-label">
+        <text decode>&nbsp;</text>
+      </view>
+      <view class="count-filled-label"> </view>
+      <view class="total-count-label">
+        <text>待複審：{{waitCount}}</text>
+        <text>已複審：{{alreadyCount}}</text>
+      </view>
+      <view hidden="{{selection != 'entity'}}" class="entity-count-label">需複審實體：{{waitEntityCount}}</view>
+    </view>
+    <view id="reformPercentBox" wx:if="{{pageType == 'reform'}}">
+      <text>整改进度</text>
+      <text>{{percent}}%</text>
+    </view>
+  </view>
+</view>
+
+<scroll-view style="height: {{listHeight}}" hidden="{{selection != 'record'}}" scroll-y>
+  <view class="record-item" wx:for="{{recordList}}" wx:for-item="recordItem" wx:for-index="recordIndex">
+    <text wx:if="{{recordItem.status == 1}}" class="record-status-label record-status-label-yellow">待整改</text>
+    <text wx:elif="{{recordItem.status == 2}}" class="record-status-label record-status-label-green">已完成</text>
+    <text wx:elif="{{recordItem.status == 3}}" class="record-status-label record-status-label-red">待複審</text>
+    <text wx:elif="{{recordItem.status == 4}}" class="record-status-label record-status-label-green">通過</text>
+    <text wx:elif="{{recordItem.status == 5}}" class="record-status-label record-status-label-red">未通過</text>
+    <text class="record-name-label">记录#{{recordIndex}}：{{recordItem.entityName}}</text>
+    <text class="record-checkpoint-label">检查点：{{recordItem.checkpointName}}</text>
+    <view class="record-imgs-box">
+      <image src="{{imgItem}}" mode="aspectFit" wx:for="{{recordItem.recordImgs}}" wx:for-item="imgItem"></image>
+    </view>
+  </view>
+</scroll-view>
+
+<scroll-view style="height: {{listHeight}}" hidden="{{selection != 'entity'}}" scroll-y>
+  <view class="entity-item" wx:for="{{entityList}}" wx:for-item="entityItem" wx:for-index="entityIndex" data-select-id="{{entityItem.id}}" bindtap="selectEntityItem">
+    <view class="entity-name-box">
+      <text class="entity-name-label">{{entityItem.entityName}}</text>
+      <text class="checkpoint-count-label" hidden="{{selectEntityId == entityItem.id}}">整改检查点：{{entityItem.undoCount}}/{{entityItem.checkpointList.length}}</text>
+      <image class="entity-item-arrow {{selectEntityId == entityItem.id ? 'entity-item-arrow-down' : ''}}" src="../../img/right.png"></image>
+    </view>
+    <view class="checkpoint-list-box" hidden="{{selectEntityId != entityItem.id}}">
+      <view class="checkpoint-item" wx:for="{{entityItem.checkpointList}}" wx:for-item="checkpointItem" wx:for-index="checkpointIndex">
+        <text wx:if="{{checkpointItem.status == 1}}" class="record-status-label record-status-label-yellow">待整改</text>
+        <text wx:elif="{{checkpointItem.status == 2}}" class="record-status-label record-status-label-green">已完成</text>
+        <text wx:elif="{{checkpointItem.status == 3}}" class="record-status-label record-status-label-red">待複審</text>
+        <text wx:elif="{{checkpointItem.status == 4}}" class="record-status-label record-status-label-green">通過</text>
+        <text wx:elif="{{checkpointItem.status == 5}}" class="record-status-label record-status-label-red">未通過</text>
+        <text class="checkpoint-name-label">#{{checkpointIndex}} 整改检查点：{{checkpointItem.checkpointName}}</text>
+        <view class="record-imgs-box">
+          <image src="{{imgItem}}" mode="aspectFit" wx:for="{{checkpointItem.recordImgs}}" wx:for-item="imgItem"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

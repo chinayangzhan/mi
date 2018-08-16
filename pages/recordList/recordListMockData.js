@@ -68,7 +68,7 @@ let checkpointRecordListData = {
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
-        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
+        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -83,7 +83,7 @@ let checkpointRecordListData = {
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
-        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
+        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -98,7 +98,7 @@ let checkpointRecordListData = {
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -113,7 +113,7 @@ let checkpointRecordListData = {
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -128,7 +128,7 @@ let checkpointRecordListData = {
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -143,7 +143,7 @@ let checkpointRecordListData = {
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -158,7 +158,7 @@ let checkpointRecordListData = {
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -166,7 +166,7 @@ let checkpointRecordListData = {
         '描述3描述3描述3描述3描述3描述3描述3描述3描述3描述3描述3描述3描述3描述3'
       ],
       status: 3,
-    }, ]
+    }]
   }
 };
 
@@ -182,7 +182,7 @@ let entityRecordListData = {
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
-        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
+        'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -197,7 +197,7 @@ let entityRecordListData = {
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
+        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg'
       ],
       recordDescs: [
         '描述1描述1描述1',
@@ -212,7 +212,7 @@ let entityRecordListData = {
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
         'http://imgsrc.baidu.com/forum/w=580/sign=3194e249b012c8fcb4f3f6c5cc0392b4/dce3b718972bd40776e5439472899e510eb30984.jpg',
         'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
-        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg',
+        'http://07.imgmini.eastday.com/mobile/20180813/20180813124618_142e50fec83aa926e379aac1aafcdeb2_1.jpeg'
       ],
       recordDescs: [
         '描述1描述1描述1',

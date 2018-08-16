@@ -1,9 +1,5 @@
 #pageHeader {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #fff;
+  padding-bottom: 25rpx;
 }
 
 #mainCategoryLabel {
@@ -72,7 +68,7 @@
 #typeSelectionSeparator {
   width: 680rpx;
   height: 4rpx;
-  margin: 0 auto 25rpx auto;
+  margin: auto;
   background-color: #2fa0d4;
   border-radius: 1rpx;
 }
@@ -111,6 +107,12 @@
 .record-item-arrow {
   width: 24rpx;
   height: 24rpx;
+  transition-property: transform;
+  transition-duration: 150ms;  
+}
+
+.record-item-arrow-down {
+  transform: rotate(90deg);
 }
 
 .record-item-all-checkpoint {

@@ -81,7 +81,7 @@ Page({
       passedCount: passedRecordList.length,
       unpassedCount: unpassedRecordList.length
     }, () => {
-      this.calculateHeaderHeight();
+      this.calculateListHeight();
     });
   },
 
@@ -107,18 +107,17 @@ Page({
       passedCount: passedRecordList.length,
       unpassedCount: unpassedRecordList.length
     }, () => {
-      this.calculateHeaderHeight();
+      this.calculateListHeight();
     });
   },
 
-  calculateHeaderHeight() {
+  calculateListHeight() {
     let query = wx.createSelectorQuery();
     query.select('#pageHeader').fields({
         size: true
       },
       (res) => {
         this.setData({
-          headerHeight: res.height + 'px',
           listHeight: (windowHeight - res.height) + 'px'
         })
       }
@@ -164,7 +163,7 @@ Page({
         }
       default:
         {
-          this.calculateHeaderHeight();
+          this.calculateListHeight();
           this.getAllRecordListData();
           break;
         }

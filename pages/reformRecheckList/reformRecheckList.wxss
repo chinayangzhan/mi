@@ -1,0 +1,215 @@
+#pageHeader {
+  padding-bottom: 20rpx;
+}
+
+#switchTypeContainer {
+  width: 320rpx;
+  height: 70rpx;
+  position: relative;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: auto;
+  border: 1rpx solid #2fa0d4;
+}
+
+.switch-type-btn {
+  width: 160rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  position: absolute;
+  top: 0;
+  background-color: #f2f2f2;
+  font-size: 26rpx;
+  text-align: center;
+  color: #3e3e3e;
+}
+
+.switch-type-btn-selected {
+  background-color: #2fa0d4;
+  color: #fff;
+}
+
+.switch-type-btn:nth-child(1) {
+  left: 0;
+}
+
+.switch-type-btn:nth-child(2) {
+  right: 0;
+}
+
+#reformRecheckCountContainer {
+  width: 620rpx;
+  padding: 25rpx 30rpx;
+  border-radius: 10rpx;
+  margin: 20rpx auto 0 auto;
+  background-color: #2fa0d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#reformTotalCountBox {
+  width: 400rpx;
+}
+
+#recheckTotalCountBox {
+  width: 620rpx;
+}
+
+.check-position-label {
+  display: block;
+  width: 100%;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.count-filled-label {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+}
+
+.total-count-label {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.total-count-label > text:nth-child(2) {
+  margin-left: 30rpx;
+}
+
+.entity-count-label {
+  width: 100%;
+  font-size: 24rpx;
+  color: #fff;
+  margin-top: 15rpx;
+}
+
+#reformPercentBox {
+  width: 200rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  background-color: #f2f2f2;
+}
+
+#reformPercentBox > text {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#reformPercentBox > text:nth-child(1) {
+  font-size: 24rpx;
+  color: #b2b2b2;
+  margin-top: 22rpx;
+}
+
+#reformPercentBox > text:nth-child(2) {
+  font-size: 30rpx;
+  color: #2fa0d4;
+  margin-top: 22rpx;
+}
+
+.record-item, .entity-item {
+  width: 620rpx;
+  padding: 20rpx 30rpx;
+  margin: 0 auto 20rpx auto;
+  background-color: #f2f2f2;
+  position: relative;
+  border: 1px solid #2fa0d4;
+  border-radius: 10rpx;
+}
+
+.record-status-label {
+  font-size: 22rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.record-status-label-yellow {
+  color: #c90;
+}
+
+.record-status-label-green {
+  color: #008000;
+}
+
+.record-status-label-red {
+  color: #f00;
+}
+
+.record-name-label {
+  display: block;
+  color: #2fa0d4;
+  font-size: 28rpx;
+}
+
+.record-checkpoint-label {
+  display: block;
+  color: #999;
+  font-size: 20rpx;
+  margin-top: 5rpx;
+}
+
+.record-imgs-box {
+  width: 560rpx;
+  display: flex;
+  margin-top: 10rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.record-imgs-box > image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  margin-top: 15rpx;
+}
+
+.entity-name-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entity-name-label {
+  display: block;
+  color: #2fa0d4;
+  font-size: 28rpx;
+  width: 62%;
+}
+
+.checkpoint-count-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.entity-item-arrow {
+  width: 24rpx;
+  height: 24rpx;
+  transition-property: transform;
+  transition-duration: 150ms;
+}
+
+.entity-item-arrow-down {
+  transform: rotate(90deg);
+}
+
+.checkpoint-item {
+  width: 580rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  position: relative;
+  margin-top: 18rpx;
+}
+
+.checkpoint-name-label {
+  display: block;
+  width: 480rpx;
+  color: #999;
+  font-size: 24rpx;
+}

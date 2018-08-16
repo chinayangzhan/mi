@@ -1,1 +1,144 @@
-/* pages/checkResult/checkResult.wxss */
+#submitReportContainer {
+  width: 620rpx;
+  margin: auto;
+  padding: 30rpx;
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+}
+
+#restaurantNameBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+#restaurantNameLabel {
+  width: 50%;
+  font-size: 30rpx;
+  color: #3e3e3e;
+}
+
+#reportDateLabel {
+  font-size: 24rpx;
+  color: #bcbcbc;
+  text-align: right;
+}
+
+.light-gray-label {
+  display: block;
+  font-size: 24rpx;
+  color: #bcbcbc;
+}
+
+#scoreMainContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+#scoreBox {
+  width: 262rpx;
+  height: 42rpx;
+  position: relative;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+#reportScoreLabel {
+  width: 130rpx;
+  height: 40rpx;
+  border: 1px solid #2fa0d4;
+  color: #2fa0d4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#maxScoreLabel {
+  width: 130rpx;
+  height: 40rpx;
+  border: 1px solid #2fa0d4;
+  background-color: #2fa0d4;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#submitReportBtn {
+  height: 65rpx;
+  line-height: 65rpx;
+  background-color: #2fa0d4;
+  color: #fff;
+  font-size: 26rpx;
+  margin: 25rpx 0 0 0;
+}
+
+#recordsCountBox {
+  display: flex;
+  justify-content: space-between;
+  width: 680rpx;
+  margin: auto;
+}
+
+.record-count-item {
+  width: 210rpx;
+  height: 170rpx;
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.record-count-Label {
+  display: block;
+  color: #3e3e3e;
+  margin-top: 33rpx;
+}
+
+.record-count-type {
+  display: block;
+  color: #999;
+  margin-top: 18rpx;
+}
+
+#weaknessChartContainer, #reformChartContainer, #monthScoreChartContainer {
+  width: 100%;
+  height: 500rpx;
+  margin-top: 35rpx;
+  position: relative;
+}
+
+#weaknessChartContainer > text, #reformChartContainer > text {
+  display: block;
+  position: absolute;
+  width: 274rpx;
+  text-align: center;
+}
+
+.chart-tip-position {
+  top: 190rpx;
+  font-size: 18rpx;
+  color: #bcbcbc;
+}
+
+.chart-tip-type {
+  top: 225rpx;
+  font-size: 24rpx;
+  color: #3e3e3e;
+}
+
+.chart-tip-month {
+  top: 260rpx;
+  font-size: 22rpx;
+  color: #bcbcbc;
+}
+
+.chart-tip-year {
+  top: 293rpx;
+  font-size: 18rpx;
+  color: #bcbcbc;
+}
