@@ -44,11 +44,11 @@
       </view>
     </view>
     <view class='submit-button-box'>
-      <view class='record-btn1' bindtap='showAction' hover-class='btn-hover-class'>放棄記錄</view>
-      <view class='record-btn1' hover-class='btn-hover-class'>不通過</view>
-      <view class='record-btn2' hover-class='btn-hover-class'>通過</view>
+      <view class='record-btn1' bindtap='showAction' data-name='abandon' hover-class='btn-hover-class'>放棄記錄</view>
+      <view class='record-btn1' bindtap='showAction' data-name='nopass' hover-class='btn-hover-class'>不通過</view>
+      <view class='record-btn2' bindtap='showAction' data-name='pass' hover-class='btn-hover-class'>通過</view>
     </view>
-    <view class='check-standard' hover-class='btn-hover-class'>
+    <view class='check-standard' bindtap='goStandardDesc' hover-class='btn-hover-class'>
       <icon type='info' color='#00BFFF' size='18'></icon>
       <text>檢查標準</text>
     </view>

@@ -1,2 +1,49 @@
-<!--pages/report/report.wxml-->
-<text>pages/report/report.wxml</text>
+<view id="submitReportContainer">
+  <view id="restaurantNameBox">
+    <text id="restaurantNameLabel">饮茶南里店6月巡检</text>
+    <text id="reportDateLabel">巡檢日期：2018年6月30日</text>
+  </view>
+  <text class="light-gray-label">巡檢分類：分店月度巡检</text>
+  <view id="scoreMainContainer">
+    <view id="scoreBox">
+      <view id="reportScoreLabel">得分：76</view>
+      <view id="maxScoreLabel">满分：100</view>
+    </view>
+    <!-- <button id="submitReportBtn">提交報告 ></button> -->
+  </view>
+</view>
+
+<view id="recordsCountBox">
+  <view class="record-count-item" bindtap='goRecordList'>
+    <text class="record-count-Label"><text style="font-size:40rpx;">64</text>个</text>
+    <text class="record-count-type">現場記錄</text>
+  </view>
+  <view class="record-count-item">
+    <text class="record-count-Label"><text style="font-size:40rpx;">14</text>个</text>
+    <text class="record-count-type">通過</text>
+  </view>
+  <view class="record-count-item" bindtap='goReformRecheckList'>
+    <text class="record-count-Label"><text style="font-size:40rpx;">50</text>个</text>
+    <text class="record-count-type">未通過</text>
+  </view>
+</view>
+
+<view id="weaknessChartContainer">
+  <text class="chart-tip-position" style="left: 238rpx;">飲茶南里店月度巡檢</text>
+  <text class="chart-tip-type" style="left: 238rpx;">實時缺陷分佈</text>
+  <text class="chart-tip-month" style="left: 238rpx;">7月</text>
+  <text class="chart-tip-year" style="left: 238rpx;">2018</text>
+  <ec-canvas id="weaknessChart" canvas-id="weaknessPieChart" ec="{{ec}}"></ec-canvas>
+</view>
+
+<view id="reformChartContainer">
+  <text class="chart-tip-position" style="left: 112rpx;">飲茶南里店月度巡檢</text>
+  <text class="chart-tip-type" style="left: 112rpx;">實時缺陷分佈</text>
+  <text class="chart-tip-month" style="left: 112rpx;">7月</text>
+  <text class="chart-tip-year" style="left: 112rpx;">2018</text>
+  <ec-canvas id="reformChart" canvas-id="reformPieChart" ec="{{ec}}"></ec-canvas>
+</view>
+
+<view id="monthScoreChartContainer">
+  <ec-canvas id="monthScoreChart" canvas-id="reformPieChart" ec="{{ec}}"></ec-canvas>
+</view>

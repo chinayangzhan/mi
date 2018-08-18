@@ -168,5 +168,11 @@ Page({
           break;
         }
     }
+  },
+
+  goCheckDetail() {
+    wx.navigateTo({
+      url: '../createRecord/createRecord',
+    })
   }
 });

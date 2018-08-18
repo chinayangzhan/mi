@@ -52,6 +52,12 @@ Page({
     });
   },
 
+  goCreateRecord() {
+    wx.navigateTo({
+      url: '../createRecord/createRecord',
+    })
+  },
+
   onShow() {
 
   }

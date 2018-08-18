@@ -1,13 +1,20 @@
-<!--index.wxml-->
-<view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <view class='user-info'>
+        <view class="userinfo-avatar">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+        <view class='user-info-detail'>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          <text class="userinfo-job">崗位：巡檢員</text>
+          <text class="userinfo-job">所屬部門：質檢中心</text>
+        </view>
+      </view>
+      <view class='user-job'>
+          <view class='user-job-title'>職責範圍</view>
+          <view>現場巡檢 | 現場記錄&報告</view>
+      </view>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+

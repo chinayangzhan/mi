@@ -4,7 +4,7 @@ let reformListData = {
   code: '0',
   msg: '',
   data: {
-    name: '飲茶南里店5月巡檢整改飲茶南里店5月巡檢整改飲茶南里店5月巡檢整改',
+    name: '飲茶南里店5月巡檢整改',
     waitCount: 30,
     alreadyCount: 40,
     waitEntityCount: 3,

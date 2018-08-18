@@ -158,3 +158,13 @@
   color: #fff;
   max-width: 590rpx;
 }
+
+.checkDetail {
+  color: #2fa0d4;
+  font-size: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: row-reverse;
+  margin-right: 25rpx;
+}

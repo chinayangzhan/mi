@@ -1,2 +1,24 @@
 <!--pages/notice/noitce.wxml-->
-<text>pages/notice/noitce.wxml</text>
+<scroll-view>
+  <view class='notice-item'>
+    <view class='notice-date'>
+      <view class='notice-date-day'>今日</view>
+      <view class='notice-date-time'>12:34:23</view>
+    </view>
+    <view class='notice-body'>新增了一天巡檢任務</view>
+  </view>
+  <view class='notice-item'>
+    <view class='notice-date'>
+      <view class='notice-date-day'>今日</view>
+      <view class='notice-date-time'>12:34:23</view>
+    </view>
+    <view class='notice-body'>新增了一天巡檢任務</view>
+  </view>
+  <view class='notice-item'>
+    <view class='notice-date'>
+      <view class='notice-date-day'>今日</view>
+      <view class='notice-date-time'>12:34:23</view>
+    </view>
+    <view class='notice-body'>新增了一天巡檢任務</view>
+  </view>
+</scroll-view>

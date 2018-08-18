@@ -10,9 +10,10 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
-    wx.showTabBarRedDot({
-      index: 1,
+    wx.setNavigationBarTitle({
+      title: '個人中心'
     })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

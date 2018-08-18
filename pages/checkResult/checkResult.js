@@ -167,7 +167,29 @@ Page({
     }, 500);
   },
 
-  onLoad(options) {
+  goRecordList() {
+    wx.navigateTo({
+      url: '../recordList/recordList',
+    })
+  },
 
+  submitReport() {
+    wx.showModal({
+      title: '提醒',
+      content: '是否完成檢測并提交報告',
+      confirmColor: '#2fa0d4',
+      confirmText: '提交',
+      success: function () {
+        wx.switchTab({
+          url: '../reportList/reportList'
+        })
+      }
+    })
+  },
+
+  onLoad(options) {
+    wx.setNavigationBarTitle({
+      title: '當期記錄',
+    })
   }
 });

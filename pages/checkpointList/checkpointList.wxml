@@ -12,7 +12,7 @@
 </view>
 
 <view id="entityList" wx:if="{{pageType=='resource'}}">
-  <view class="option-item" wx:for="{{entityListData}}" wx:for-item="entityItem" wx:for-index="entityIndex" wx:key="id">
+  <view class="option-item" bindtap='goCreateRecord' wx:for="{{entityListData}}" wx:for-item="entityItem" wx:for-index="entityIndex" wx:key="id">
     <text class="option-item-name">#{{entityIndex}} {{entityItem.name}}</text>
     <text wx:if="{{entityItem.status==2}}" class="option-item-status" style="color: #008000;">通过</text>
     <text wx:elif="{{entityItem.status==3}}" class="option-item-status" style="color: #ff0000;">未通过</text>
@@ -21,7 +21,7 @@
 </view>
 
 <view id="checkpointList" wx:elif="{{pageType=='checkpoint'}}">
-  <view class="checkpoint-category-container" wx:for="{{checkpointListData}}" wx:for-item="checkpointCategory">
+  <view class="checkpoint-category-container" bindtap='goCreateRecord' wx:for="{{checkpointListData}}" wx:for-item="checkpointCategory">
     <text class="checkpoint-category-name">{{checkpointCategory.checkpointCategory}}</text>
     <view class="option-item" wx:for="{{checkpointCategory.subCheckpointList}}" wx:for-item="checkpointItem" wx:for-index="checkpointIndex" wx:key="id">
       <text class="option-item-name">#{{checkpointIndex}} {{checkpointItem.name}}</text>

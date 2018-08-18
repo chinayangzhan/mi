@@ -50,14 +50,16 @@ Page({
     wx.setNavigationBarTitle({
       title: '检查项目'
     });
-  },
 
-  onShow() {
     if (this.data.pageType === 'checkpoint') {
       this.getChecklistData();
     } else if (this.data.pageType === 'entity') {
       this.getEntityData();
     }
+  },
+
+  onShow() {
+    
   },
 
   getChecklistData() {
@@ -289,15 +291,32 @@ Page({
   },
 
   addRecords() {
-    wx.showToast({
-      title: '添加记录'
-    });
+    if(this.data.pageType === 'checkpoint'){
+      wx.navigateTo({
+        url: '../checkpointList/checkpointList?type=resource'
+      });
+    } else {
+      wx.navigateTo({
+        url: '../createRecord/createRecord'
+      });
+    }
   },
 
   finishCheck() {
-    wx.navigateTo({
-      url: '../checkResult/checkResult'
-    });
+    wx.showModal({
+      title: '提醒',
+      content: '系統檢測到：\r\n 未完成監測點：12 \r\n 未檢測資源實體：4 \r\n 是否仍然結束檢查',
+      confirmText: '仍然結束',
+      cancelText: '不結束',
+      confirmColor: '#2fa0d4',
+      success: function() {
+        wx.navigateTo({
+          url: '../checkResult/checkResult'
+        });
+      }
+    })
+
+   
   },
 
   calculateFilledHeight() {

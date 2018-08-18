@@ -4,7 +4,15 @@
     "pages/logs/logs",
     "pages/notice/noitce",
     "pages/report/report",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/addRecord/addRecord",
+    "pages/recordList/recordList",
+    "pages/checkpointList/checkpointList",
+    "pages/createRecord/createRecord",
+    "pages/checkResult/checkResult",
+    "pages/reformRecheckList/reformRecheckList",
+    "pages/standardDesc/standardDesc",
+    "pages/reportList/reportList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +28,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "巡檢",
         "iconPath": "img/check.png",
         "selectedIconPath": "img/check-selected.png"
       },
@@ -31,17 +39,18 @@
         "selectedIconPath": "img/alert-selected.png"
       },
       {
-        "pagePath": "pages/report/report",
-        "text": "报告",
+        "pagePath": "pages/reportList/reportList",
+        "text": "報告",
         "iconPath": "img/report.png",
         "selectedIconPath": "img/report-selected.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "个人中心",
+        "text": "個人中心",
         "iconPath": "img/me.png",
         "selectedIconPath": "img/me-selected.png"
       }
     ]
-  }
+  },
+  "debug": true
 }

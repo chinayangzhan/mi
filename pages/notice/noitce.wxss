@@ -1,1 +1,34 @@
 /* pages/notice/noitce.wxss */
+.notice-item {
+  background: #e3e3e3;
+  width: 700rpx;
+  margin: 10rpx auto;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+.notice-date {
+  width: 150rpx;
+  background: #2fa0d4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.notice-date-day {
+  font-size: 35rpx;
+}
+
+.notice-date-time {
+  font-size: 25rpx;
+}
+
+.notice-body {
+  padding: 15rpx;
+  font-size: 25rpx;
+  color: #3e3e3e
+}

@@ -113,6 +113,7 @@ Page({
 
   goTask(e) {
     let taskState = e.currentTarget.dataset.state;
+    console.log(taskState)
 
     switch (taskState) {
       case 'checking':
@@ -123,6 +124,11 @@ Page({
       case 'needcheck':
         wx.navigateTo({
           url: '../addRecord/addRecord'
+        });
+        break;
+      case 'done':
+        wx.navigateTo({
+          url: '../report/report'
         });
         break;
     }

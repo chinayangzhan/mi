@@ -28,7 +28,9 @@ Page({
   },
 
   choiceEntity() {
-
+    wx.navigateTo({
+      url: '../checkpointList/checkpointList?type=resource'
+    });
   },
 
   choiceImage() {
@@ -36,7 +38,6 @@ Page({
 
     wx.chooseImage({
       success: function(e) {
-        console.log('123', _this)
         const images = _this.data.images.concat(e.tempFilePaths);
 
         _this.setData({
@@ -113,14 +114,60 @@ Page({
   },
 
   showAction(e) {
-    wx.showActionSheet({
-      itemList: ['保存記錄', '繼續檢查此實體'],
-      success: function (res) {
-        console.log(res.tapIndex)
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
+    let eventSource = e.target.dataset.name;
+    console.log(eventSource)
+
+    switch (eventSource) {
+      case 'abandon':
+        wx.navigateTo({
+          url: '../addRecord/addRecord',
+        });
+      break;
+      case 'nopass':
+        wx.showActionSheet({
+          itemList: ['保存記錄', '繼續檢查此實體'],
+          success: function (res) {
+            if(res.tapIndex === 0) {
+              wx.navigateTo({
+                url: '../addRecord/addRecord',
+              })
+            } else if (res.tapIndex === 1) {
+              wx.navigateTo({
+                url: '../checkpointList/checkpointList?type=checkpoint'
+              });
+            }
+          },
+          fail: function (res) {
+            console.log(res.errMsg)
+          }
+        });
+        break;
+      case 'pass':
+        wx.showActionSheet({
+          itemList: ['保存記錄', '繼續檢查此實體'],
+          success: function (res) {
+            if (res.tapIndex === 0) {
+              wx.navigateTo({
+                url: '../addRecord/addRecord',
+              })
+            } else if (res.tapIndex === 1) {
+              wx.navigateTo({
+                url: '../checkpointList/checkpointList?type=checkpoint'
+              });
+            }
+          },
+          fail: function (res) {
+            console.log(res.errMsg)
+          }
+        });
+        break;
+    }
+    
+  },
+
+  goStandardDesc() {
+    wx.navigateTo({
+      url: '../standardDesc/standardDesc',
     })
   }
 

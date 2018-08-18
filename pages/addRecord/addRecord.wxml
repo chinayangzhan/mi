@@ -9,7 +9,7 @@
       <text wx:if="{{pageType=='entity'}}" class="parent-item-index">資源{{item.romaIndex}}</text>
       <text class="parent-item-name">{{item.name}}</text>
     </button>
-    <button id="examineFinishBtn" bindtap="finishCheck">巡檢結束</button>
+    <button id="examineFinishBtn" catchtap="finishCheck">巡檢結束</button>
   </scroll-view>
   <scroll-view id="subItemsList" scroll-y scroll-with-animation scroll-into-view="{{subToView}}" bindscroll="subListScroll">
     <view id="subItem{{itemIndex}}" wx:for="{{subListData}}" wx:for-item="item" wx:for-index="itemIndex" class="sub-data-item-box {{selectedSubId==item.id?'sub-data-item-selected':''}}" bindtap="chooseSubData" data-item-index="{{itemIndex}}" data-parent-index="{{item.parentItemIndex}}">
