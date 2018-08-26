@@ -74,8 +74,15 @@ page {
   width: 30rpx;
   height: 30rpx;
   position: absolute;
+  border-radius: 50%; 
   top: 13rpx;
   right: 13rpx;
+  color: white;
+  font-size: 18rpx;
+  font-weight: bold;
+  line-height: 30rpx;
+  text-align: center;
+  background-color: red;
 }
 
 .parent-item-index, .parent-item-name {
@@ -109,7 +116,7 @@ page {
   border-radius: 12rpx;
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 15rpx;
 }
 
 .sub-data-item {

@@ -119,8 +119,8 @@ Page({
 
     switch (eventSource) {
       case 'abandon':
-        wx.navigateTo({
-          url: '../addRecord/addRecord',
+        wx.navigateBack({
+          
         });
       break;
       case 'nopass':
@@ -128,11 +128,11 @@ Page({
           itemList: ['保存記錄', '繼續檢查此實體'],
           success: function (res) {
             if(res.tapIndex === 0) {
-              wx.navigateTo({
-                url: '../addRecord/addRecord',
-              })
+              wx.navigateBack({
+                delta: 2
+              });
             } else if (res.tapIndex === 1) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../checkpointList/checkpointList?type=checkpoint'
               });
             }
@@ -147,11 +147,11 @@ Page({
           itemList: ['保存記錄', '繼續檢查此實體'],
           success: function (res) {
             if (res.tapIndex === 0) {
-              wx.navigateTo({
-                url: '../addRecord/addRecord',
-              })
+              wx.navigateBack({
+                delta: 2
+              });
             } else if (res.tapIndex === 1) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../checkpointList/checkpointList?type=checkpoint'
               });
             }

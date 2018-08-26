@@ -4,6 +4,8 @@ import {
   checkpointRecordListData
 } from './recordListMockData';
 
+const app = getApp();
+
 let windowHeight;
 wx.getSystemInfo({
   success(res) {
@@ -22,7 +24,8 @@ Page({
 
   onLoad: function(options) {
     this.setData({
-      pageType: !options.type ? 'all' : options.type
+      pageType: !options.type ? 'all' : options.type,
+      data: Object.assign(app.globalData, this.data)
     });
 
     let navigationTitle = '檢查記錄';

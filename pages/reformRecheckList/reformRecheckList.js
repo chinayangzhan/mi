@@ -17,15 +17,16 @@ Page({
   },
 
   onLoad(options) {
+    console.log(options)
     this.setData({
-      pageType: 'reform'
+      pageType: options.type
       // pageType: 'recheck'
     });
 
     wx.setNavigationBarTitle({
       title: '整改清單'
     });
-
+    
     if (this.data.pageType === 'reform') {
       this.getReformData();
     } else if (this.data.pageType === 'recheck') {

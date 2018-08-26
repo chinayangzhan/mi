@@ -3,6 +3,8 @@ import {
   checkpointListData
 } from './checkpointListMockData';
 
+const app = getApp();
+
 Page({
   data: {
 
@@ -10,7 +12,8 @@ Page({
 
   onLoad(options) {
     this.setData({
-      pageType: options.type
+      pageType: options.type,
+      data: Object.assign(app.globalData, this.data)
     });
 
     if (this.data.pageType === 'resource') {

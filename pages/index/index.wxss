@@ -69,6 +69,11 @@
   font-size: 25rpx
 }
 
+.item-state-process {
+  color: #2fa0d4;
+  text-align: center;
+}
+
 .item-state-checking, .item-state-rechecking {
   color: green;
 }

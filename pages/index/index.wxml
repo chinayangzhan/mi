@@ -15,12 +15,15 @@
                 <text>{{item.type}}</text>
             </view>
         </view>
-        <view class='item-state-done' wx:if="{{item.state === 'done'}}">
+        <view class='item-state-done' wx:if="{{item.state === 20}}">
             <text>完成時間：{{item.doneTime}}</text>
         </view>
-        <view class='task-item-state' wx:elif="{{item.state !== 'done' && item.state !== 'needcheck'}}">
-            <text class='item-state-checking' wx:if="{{item.state === 'checking'}}">執行中</text>
-            <text class='item-state-rechecking' wx:if="{{item.state === 'rechecking'}}">複審中</text>
+        <view class='task-item-state' wx:elif="{{item.state !== 20 && item.state !== 0}}">
+            <text class='item-state-checking' wx:if="{{item.state === 5}}">執行中</text>
+            <view class='item-state-rechecking' wx:if="{{item.state === 10}}">
+            <view class='item-state-process'>{{item.process}}</view>
+            <view>複審中</view>   
+            </view>
         </view>
     </view>
     <view class='cutting-line' wx:if="{{belowList.length !== 0}}"></view>
@@ -34,7 +37,7 @@
                 <text>{{item.type}}</text>
             </view>
         </view>
-        <view class='task-item-state' wx:if="{{item.state === 'needcheck'}}">
+        <view class='task-item-state' wx:if="{{item.state === 0}}">
             <view>
                 <text class='item-state-needcheck-dueDay'>{{item.dueDay}}</text>
             </view>
@@ -42,8 +45,11 @@
                 <text class='item-state-needcheck-text'>截止時間</text>
             </view>   
         </view>
-        <view class='task-item-state' wx:if="{{item.state === 'rectifying'}}">
-            <text class='item-state-rectifying'>整改中</text>
+        <view class='task-item-state' wx:if="{{item.state === 15}}">
+            <view class='item-state-rectifying'>
+              <view class='item-state-process'>{{item.process}}</view>
+              <view>整改中</view> 
+            </view>
         </view>
     </view>
 </scroll-view>

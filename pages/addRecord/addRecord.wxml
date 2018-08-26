@@ -2,24 +2,24 @@
   <scroll-view id="leftContainer" scroll-y scroll-with-animation scroll-into-view="{{parentToView}}">
     <button id="scanBtn" bindtap="openScan">扫一扫</button>
     <button id="changeToCheckpointBtn" bindtap="changeToCheckpoint" wx:if="{{pageType == 'entity'}}">檢查項</button>
-    <button id="changeToEntityBtn" bindtap="changeToEntity" wx:if="{{pageType == 'checkpoint'}}">資源目錄</button>
-    <button id="parentItem{{itemIndex}}" wx:for="{{listData}}" wx:for-item="item" wx:for-index="itemIndex" class="parent-data-item {{selectedParentId==item.id?'parent-data-item-selected':''}}" bindtap="chooseParentData" data-item-index="{{itemIndex}}">
-      <image class="parent-item-unfinished-icon" wx:if="{{!item.isAllChecked}}" src="{{selectedParentId==item.id ? '../../img/item_unfinished_light.png' : '../../img/item_unfinished_dark.png'}}"></image>
+    <!-- <button id="changeToEntityBtn" bindtap="changeToEntity" wx:if="{{pageType == 'checkpoint'}}">資源目錄</button> -->
+    <button id="parentItem{{itemIndex}}" wx:for="{{listData}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="{{itemIndex}}" class="parent-data-item {{selectedParentId==item.id?'parent-data-item-selected':''}}" bindtap="chooseParentData" data-item-index="{{itemIndex}}">
+      <view class="parent-item-unfinished-icon" wx:if="{{item.noRecordNums}}">{{item.noRecordNums}}</view>
       <text wx:if="{{pageType=='checkpoint'}}" class="parent-item-index">檢查項{{item.romaIndex}}</text>
       <text wx:if="{{pageType=='entity'}}" class="parent-item-index">資源{{item.romaIndex}}</text>
-      <text class="parent-item-name">{{item.name}}</text>
+      <text class="parent-item-name">{{item.checkItemName}}</text>
     </button>
     <button id="examineFinishBtn" catchtap="finishCheck">巡檢結束</button>
   </scroll-view>
   <scroll-view id="subItemsList" scroll-y scroll-with-animation scroll-into-view="{{subToView}}" bindscroll="subListScroll">
-    <view id="subItem{{itemIndex}}" wx:for="{{subListData}}" wx:for-item="item" wx:for-index="itemIndex" class="sub-data-item-box {{selectedSubId==item.id?'sub-data-item-selected':''}}" bindtap="chooseSubData" data-item-index="{{itemIndex}}" data-parent-index="{{item.parentItemIndex}}">
+    <view id="subItem{{itemIndex}}" wx:for="{{subListData}}" wx:for-item="item" wx:for-index="itemIndex" wx:key="{{itemIndex}}" class="sub-data-item-box {{selectedSubId==item.id?'sub-data-item-selected':''}}" bindtap="chooseSubData" data-item-index="{{itemIndex}}" data-parent-index="{{item.parentItemIndex}}">
       <view class="sub-data-item">
         <view class="sub-item-name-box">
-          <text class="sub-item-name">#{{itemIndex+1}} {{item.name}}</text>
-          <text class="sub-item-count">已查{{item.checkedCount}}/{{item.totalCount}}</text>
+          <text class="sub-item-name">#{{itemIndex+1}} {{item.checkPointName}}</text>
+          <text class="sub-item-count">已查{{item.totalCount === -1?'...':item.checkedCount}}/{{item.totalCount === -1? '...' : item.totalCount}}</text>
         </view>
-        <text class="sub-item-passed-count">通過：{{item.passedCount}}</text>
-        <text class="sub-item-unpassed-count">未通過：{{item.unpassedCount}}</text>
+        <text class="sub-item-passed-count">通過：{{item.passNums}}</text>
+        <text class="sub-item-unpassed-count">未通過：{{item.noPassNums}}</text>
         <view class="sub-item-btn-box">
           <button class="sub-item-white-btn" catchtap="goResourceList" hidden="{{selectedSubId!=item.id || pageType!='checkpoint'}}">資源目錄</button>
           <button class="sub-item-white-btn" catchtap="goCheckpointList" hidden="{{selectedSubId!=item.id || pageType!='entity'}}">檢查點</button>

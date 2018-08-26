@@ -61,7 +61,7 @@
           <text class="item-desc-content" wx:for="{{recordItem.recordDescs}}" wx:for-item="descItem">{{descItem}}</text>
         </view>
         <view class='checkDetail' bindtap='goCheckDetail'>
-          <text>查看詳情</text>
+          <text>編輯記錄</text>
           <icon type='info' color='#00BFFF' size='18'></icon>          
         </view>
       </view>
@@ -99,7 +99,7 @@
           <text class="item-desc-content" wx:for="{{recordItem.recordDescs}}" wx:for-item="descItem">{{descItem}}</text>
         </view>
         <view class='checkDetail' bindtap='goCheckDetail'>
-          <text>查看詳情</text>
+          <text>編輯記錄</text>
           <icon type='info' color='#00BFFF' size='18'></icon>          
         </view>
       </view>
@@ -137,7 +137,7 @@
           <text class="item-desc-content" wx:for="{{recordItem.recordDescs}}" wx:for-item="descItem">{{descItem}}</text>
         </view>
         <view class='checkDetail' bindtap='goCheckDetail'>
-          <text>查看詳情</text>
+          <text>編輯記錄</text>
           <icon type='info' color='#00BFFF' size='18'></icon>          
         </view>
       </view>

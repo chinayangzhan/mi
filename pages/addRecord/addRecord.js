@@ -1,9 +1,11 @@
 // pages/checklist/checklist.js
 
 import {
-  checklistData,
+  res,
   entityData
 } from './addRecordMockData';
+
+const app = getApp();
 
 let windowHeight;
 wx.getSystemInfo({
@@ -51,11 +53,17 @@ Page({
       title: '检查项目'
     });
 
-    if (this.data.pageType === 'checkpoint') {
-      this.getChecklistData();
-    } else if (this.data.pageType === 'entity') {
-      this.getEntityData();
-    }
+    this.setData({
+      data: Object.assign(app.globalData, this.data)
+    });
+
+    // if (this.data.pageType === 'checkpoint') {
+    //   this.getChecklistData();
+    // } else if (this.data.pageType === 'entity') {
+    //   this.getEntityData();
+    // }
+
+    this.getChecklistData();
   },
 
   onShow() {
@@ -63,60 +71,126 @@ Page({
   },
 
   getChecklistData() {
+    const _that = this,
+          globalData = this.data.data;
+          console.log(this.data.data)
     wx.showLoading({
       title: '加載中...',
       mask: true
     });
 
-    setTimeout(() => {
-      let subListData = [],
-        parentItemIndex,
-        subItemIndex = 0;
-      for (let parentItem in checklistData.data) {
-        parentItemIndex = parentItem;
-        checklistData.data[parentItem].romaIndex = romaNumMap[Number(parentItem) + 1];
-        checklistData.data[parentItem].isAllChecked = true;
-        checklistData.data[parentItem].subItemIndex = subItemIndex;
-        subItemIndex += checklistData.data[parentItem].items.length;
+    wx.request({
+      url: `${globalData.base_url}/inspection_item/list/1`,
+      header: {
+        token: globalData.token
+      },
+      success(res) {
+        console.log(res)
+        res = res.data
+        let subListData = [],
+          parentItemIndex,
+          subItemIndex = 0;
+        for (let parentItem in res.data) {
+          parentItemIndex = parentItem;
+          console.log(res.data)
+          res.data[parentItem].romaIndex = romaNumMap[Number(parentItem) + 1];
+          // res.data[parentItem].isAllChecked = true;
+          res.data[parentItem].subItemIndex = subItemIndex;
+          subItemIndex += res.data[parentItem].checkpoints.length;
 
-        for (let subItem in checklistData.data[parentItem].items) {
-          checklistData.data[parentItem].items[subItem].parentItemIndex = parentItemIndex;
-          if (checklistData.data[parentItem].items[subItem].totalCount > checklistData.data[parentItem].items[subItem].checkedCount) {
-            checklistData.data[parentItem].isAllChecked = false;
+          for (let subItem in res.data[parentItem].checkpoints) {
+            res.data[parentItem].checkpoints[subItem].parentItemIndex = parentItemIndex;
+            res.data[parentItem].checkpoints[subItem].checkedCount = res.data[parentItem].checkpoints[subItem].noPassNums + res.data[parentItem].checkpoints[subItem].passNums
+            console.log("totalcount",res.data[parentItem].checkpoints[subItem].totalCount)
+            // if (res.data[parentItem].checkpoints[subItem].totalCount > res.data[parentItem].checkpoints[subItem].checkedCount) {
+            //   res.data[parentItem].isAllChecked = false;
+            // }
           }
+
+          subListData = subListData.concat(res.data[parentItem].checkpoints);
         }
 
-        subListData = subListData.concat(checklistData.data[parentItem].items);
-      }
-
-      this.setData({
-          listData: checklistData.data,
+        _that.setData({
+          listData: res.data,
           subListData: subListData,
-          selectedParentId: checklistData.data[0].id,
+          selectedParentId: res.data[0].id,
           selectedSubId: null
         },
-        () => {
-          calTopArray = [];
+          () => {
+            calTopArray = [];
 
-          let query = wx.createSelectorQuery();
-          for (let i = 0; i < this.data.listData.length; i++) {
-            query.select('#subItem' + this.data.listData[i].subItemIndex).fields({
+            let query = wx.createSelectorQuery();
+            for (let i = 0; i < _that.data.listData.length; i++) {
+              query.select('#subItem' + _that.data.listData[i].subItemIndex).fields({
                 dataset: true,
                 rect: true
               },
-              (res) => {
-                calTopArray.push(res.top);
-              }
-            );
-          }
-          query.exec(() => {
-            wx.hideLoading();
-          });
+                (res) => {
+                  if(res){
+                    calTopArray.push(res.top);
+                  }
+                }
+              );
+            }
+            query.exec(() => {
+              wx.hideLoading();
+            });
 
-          this.calculateFilledHeight();
-        }
-      );
-    }, 500);
+            _that.calculateFilledHeight();
+          }
+        );
+      }
+    })
+
+    // setTimeout(() => {
+    //   let subListData = [],
+    //     parentItemIndex,
+    //     subItemIndex = 0;
+    //   for (let parentItem in res.data) {
+    //     parentItemIndex = parentItem;
+    //     res.data[parentItem].romaIndex = romaNumMap[Number(parentItem) + 1];
+    //     res.data[parentItem].isAllChecked = true;
+    //     res.data[parentItem].subItemIndex = subItemIndex;
+    //     subItemIndex += res.data[parentItem].items.length;
+
+    //     for (let subItem in res.data[parentItem].items) {
+    //       res.data[parentItem].items[subItem].parentItemIndex = parentItemIndex;
+    //       if (res.data[parentItem].items[subItem].totalCount > res.data[parentItem].items[subItem].checkedCount) {
+    //         res.data[parentItem].isAllChecked = false;
+    //       }
+    //     }
+
+    //     subListData = subListData.concat(res.data[parentItem].items);
+    //   }
+
+    //   this.setData({
+    //       listData: res.data,
+    //       subListData: subListData,
+    //       selectedParentId: res.data[0].id,
+    //       selectedSubId: null
+    //     },
+    //     () => {
+    //       calTopArray = [];
+
+    //       let query = wx.createSelectorQuery();
+    //       for (let i = 0; i < this.data.listData.length; i++) {
+    //         query.select('#subItem' + this.data.listData[i].subItemIndex).fields({
+    //             dataset: true,
+    //             rect: true
+    //           },
+    //           (res) => {
+    //             calTopArray.push(res.top);
+    //           }
+    //         );
+    //       }
+    //       query.exec(() => {
+    //         wx.hideLoading();
+    //       });
+
+    //       this.calculateFilledHeight();
+    //     }
+    //   );
+    // }, 500);
   },
 
   getEntityData() {
@@ -132,14 +206,14 @@ Page({
       for (let parentItem in entityData.data) {
         parentItemIndex = parentItem;
         entityData.data[parentItem].romaIndex = romaNumMap[Number(parentItem) + 1];
-        entityData.data[parentItem].isAllChecked = true;
+        // entityData.data[parentItem].isAllChecked = true;
         entityData.data[parentItem].subItemIndex = subItemIndex;
         subItemIndex += entityData.data[parentItem].items.length;
 
         for (let subItem in entityData.data[parentItem].items) {
           entityData.data[parentItem].items[subItem].parentItemIndex = parentItemIndex;
           if (entityData.data[parentItem].items[subItem].totalCount > entityData.data[parentItem].items[subItem].checkedCount) {
-            entityData.data[parentItem].isAllChecked = false;
+            // entityData.data[parentItem].isAllChecked = false;
           }
         }
 
@@ -205,7 +279,9 @@ Page({
                   rect: true
                 },
                 (res) => {
-                  calTopArray.push(res.top + scrollRes.scrollTop);
+                  if(res){
+                    calTopArray.push(res.top + scrollRes.scrollTop);
+                  }
                 }
               );
             }
@@ -320,8 +396,9 @@ Page({
   },
 
   calculateFilledHeight() {
+    console.log('calculateFilledHeight',this.data)
     let query = wx.createSelectorQuery(),
-      lastSubList = this.data.listData[this.data.listData.length - 1].items,
+      lastSubList = this.data.listData[this.data.listData.length - 1].checkpoints,
       lastSubListHeight = 15;
     for (let i = this.data.subListData.length - lastSubList.length; i < this.data.subListData.length; i++) {
       query.select('#subItem' + i).fields({

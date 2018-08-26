@@ -62,6 +62,7 @@ let taskListData = {
       name: '大望路店6月份檢查',
       type: '分店月度檢查',
       state: 'rechecking',
+      process: '60%',
       dueDay: '',
       doneTime: ''
     }, {
