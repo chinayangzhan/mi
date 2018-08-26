@@ -1,0 +1,23 @@
+/* pages/StandardDesc/StandardDesc.wxss */
+.desc-name {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  padding: 25rpx;
+}
+
+.desc-detail {
+  font-size: 25rpx;
+  color: #0202028f;
+  padding: 0 35rpx;
+}
+
+.demotext {
+  padding: 25rpx;
+  font-size: 30rpx;
+}
+
+image {
+  width: 700rpx;
+  height: 300rpx;
+  margin: 15rpx auto;
+}

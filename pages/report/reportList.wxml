@@ -1,0 +1,8 @@
+<scroll-view>
+  <view class='report-item' bindtap='goReprot'>
+    <view class='reprot-name'>
+      <text>饮茶南里店月度巡检报告 （2018年6月）</text>
+    </view>
+    <text class='report-date'>提交時間：2018.06.22</text>
+  </view>
+</scroll-view>
